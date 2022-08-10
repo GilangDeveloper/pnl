@@ -1,0 +1,21 @@
+<input type="text" name="email" id="email" required>
+<input type="text" id="valEmail">
+<button id="bntn"></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $("#bntn").click(function() {
+        var ngEmail = $("#email").val();
+        $.post("up.php", {
+            nama: ngEmail
+        }, function(ngE) {
+            if (ngE = "Sukses") {
+                $("#valEmail").val(ngEmail);
+                // $("#currentResult").html(0);
+                console.log(ngE)
+            }
+        })
+    })
+</script>
